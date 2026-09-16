@@ -1,0 +1,42 @@
+:root { color-scheme: light; font-family: Inter, "Noto Sans KR", system-ui, sans-serif; color: #172040; background: #f4f6fc; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: radial-gradient(circle at 12% 8%, #dce7ff 0, transparent 30rem), #f4f6fc; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+.shell { width: min(100% - 2rem, 580px); margin: 0 auto; padding: 3.75rem 0 2.5rem; }
+header { margin-bottom: 1.75rem; }
+.eyebrow { margin: 0 0 .4rem; color: #566aa6; font-size: .75rem; font-weight: 800; letter-spacing: .12em; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { margin-bottom: .35rem; font-size: clamp(2.5rem, 10vw, 4rem); letter-spacing: -.07em; line-height: 1; }
+h2 { margin-bottom: 0; font-size: 1.35rem; letter-spacing: -.035em; }
+h3 { margin-bottom: .25rem; font-size: 1rem; }
+.intro, .help, .sound-row p, .notice { color: #5e6680; line-height: 1.55; }
+.intro { margin: 0; font-size: 1.05rem; }
+.clock-card, .alarm-card { background: rgba(255,255,255,.78); border: 1px solid rgba(37,54,113,.12); border-radius: 1.4rem; box-shadow: 0 14px 35px rgba(24,39,93,.08); }
+.clock-card { padding: 1.4rem 1.5rem; margin-bottom: 1rem; }
+.date { margin-bottom: .3rem; color: #5e6680; font-size: .9rem; }
+.clock { margin: 0; color: #2d3a80; font-size: clamp(2.25rem, 11vw, 3.8rem); font-variant-numeric: tabular-nums; font-weight: 750; letter-spacing: -.06em; }
+.alarm-card { padding: 1.5rem; }
+.card-heading, .sound-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.badge { padding: .45rem .65rem; border-radius: 99px; background: #e8ecf9; color: #3d4c91; white-space: nowrap; font-size: .8rem; font-weight: 700; }
+.badge.active { background: #d8f0de; color: #27663a; }
+.time-label { display: block; margin: 1.8rem 0 .5rem; font-weight: 750; }
+input[type="time"] { width: 100%; padding: 1rem 1.1rem; border: 1px solid #bbc4e2; border-radius: .9rem; background: #fff; color: #172040; font-size: 1.45rem; font-weight: 700; }
+.help { margin: .55rem 0 1.4rem; font-size: .9rem; }
+.sound-row { padding: 1rem 0 1.35rem; border-top: 1px solid #e5e8f3; }
+.sound-row p { margin: 0; font-size: .84rem; }
+.primary, .secondary, .stop-button { border: 0; border-radius: .85rem; font-weight: 800; }
+.primary { width: 100%; padding: 1rem; background: #2d3a80; color: #fff; font-size: 1rem; }
+.primary:hover { background: #202b65; }
+.secondary { padding: .7rem .8rem; background: #e9edfa; color: #2d3a80; font-size: .85rem; white-space: nowrap; }
+.text-button { display: block; margin: .8rem auto 0; border: 0; background: transparent; color: #566aa6; font-weight: 700; }
+.message { min-height: 1.45em; margin: 1rem 0 0; color: #27663a; font-size: .9rem; text-align: center; }
+.notice { margin: 1rem .25rem; font-size: .82rem; text-align: center; }
+.overlay { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; padding: 1.5rem; background: rgba(19, 28, 67, .82); }
+.ringing-card { width: min(100%, 430px); padding: 3rem 1.5rem 1.5rem; border-radius: 1.7rem; background: #fff; text-align: center; box-shadow: 0 24px 70px rgba(0,0,0,.28); }
+.alarm-orb { display: grid; width: 7.5rem; height: 7.5rem; place-items: center; margin: 1rem auto 1.5rem; border-radius: 50%; background: #fff1cf; color: #d8841d; font-size: 3.5rem; animation: pulse 1s infinite alternate; }
+.ringing-card h2 { font-size: 2rem; }
+.ringing-time { margin: .7rem 0 2rem; color: #5e6680; font-size: 1.1rem; }
+.stop-button { width: 100%; padding: 1rem; background: #e86c52; color: #fff; font-size: 1rem; }
+@keyframes pulse { to { transform: scale(1.08); box-shadow: 0 0 0 1rem rgba(248,198,109,.17); } }
+@media (max-width: 430px) { .shell { padding-top: 2.3rem; } .alarm-card, .clock-card { padding: 1.25rem; } }

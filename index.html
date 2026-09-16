@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="원하는 시간에 기본 알람음을 울리는 간단한 알람" />
+    <title>깨움 — 기본 알람</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232d3a80'/%3E%3Cpath d='M32 15a17 17 0 1 0 0 34 17 17 0 0 0 0-34Zm0 5v13l9 5' fill='none' stroke='%23f8c66d' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="eyebrow">BASIC ALARM</p>
+        <h1>깨움</h1>
+        <p class="intro">오늘의 한 번, 제시간에 깨워드릴게요.</p>
+      </header>
+
+      <section class="clock-card" aria-live="polite">
+        <p id="dateText" class="date"></p>
+        <p id="clock" class="clock">00:00:00</p>
+      </section>
+
+      <section class="alarm-card" aria-labelledby="alarmTitle">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow">NEXT ALARM</p>
+            <h2 id="alarmTitle">알람 맞추기</h2>
+          </div>
+          <span id="stateBadge" class="badge">대기 중</span>
+        </div>
+
+        <label class="time-label" for="alarmTime">알람 시간</label>
+        <input id="alarmTime" type="time" aria-describedby="timeHelp" />
+        <p id="timeHelp" class="help">시간을 선택하면 다음 해당 시각에 울립니다.</p>
+
+        <div class="sound-row">
+          <div>
+            <h3>기본 알람음</h3>
+            <p id="soundStatus">소리를 사용하려면 한 번 눌러 주세요.</p>
+          </div>
+          <button id="soundButton" class="secondary" type="button">소리 사용</button>
+        </div>
+
+        <button id="setButton" class="primary" type="button">알람 설정</button>
+        <button id="cancelButton" class="text-button" type="button" hidden>알람 취소</button>
+        <p id="message" class="message" role="status"></p>
+      </section>
+
+      <p class="notice">이 웹 버전은 브라우저가 열려 있는 동안 작동합니다.</p>
+    </main>
+
+    <section id="ringingOverlay" class="overlay" aria-modal="true" role="dialog" aria-labelledby="ringingTitle" hidden>
+      <div class="ringing-card">
+        <p class="eyebrow">WAKE UP</p>
+        <div class="alarm-orb" aria-hidden="true">☀</div>
+        <h2 id="ringingTitle">좋은 아침이에요</h2>
+        <p id="ringingTime" class="ringing-time"></p>
+        <button id="stopButton" class="stop-button" type="button">알람 끄기</button>
+      </div>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>
